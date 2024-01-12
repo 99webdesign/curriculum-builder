@@ -9,9 +9,20 @@
 </head>
 <body>
     <div id="app">
-        <textarea id="inputText" placeholder="Enter your curriculum text here..."></textarea>
-        <button onclick="generateCurriculum()">Generate Curriculum</button>
+        <div id="inputContainer">
+            <div class="module-container">
+                <h3>Modules:</h3>
+                <textarea id="moduleInput" placeholder="Enter module names here..."></textarea>
+            </div>
+            <div class="lesson-container">
+                <h3>Lessons:</h3>
+                <textarea id="lessonInput" placeholder="Enter lesson names here..."></textarea>
+            </div>
+        </div>
+        <button onclick="generateCurriculum()">Convert to HTML Code</button>
         <div id="outputContainer"></div>
+        
+        <p>Free tool by 99webdesign. Check it out <a href="https://99webdesign.net" target="_blank">here</a>.</p>
     </div>
 </body>
 </html>
