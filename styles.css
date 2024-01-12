@@ -12,9 +12,9 @@ h1 {
     text-align: center;
 }
 
-#editor {
-    border: 1px solid #ddd;
-    padding: 10px;
+#tinyMCEEditor {
+    width: 100%;
+    height: 200px;
     margin-bottom: 10px;
 }
 
