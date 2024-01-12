@@ -1,20 +1,26 @@
 function generateCurriculum() {
-    const inputText = document.getElementById('inputText').value.trim();
+    const moduleInput = document.getElementById('moduleInput').value.trim();
+    const lessonInput = document.getElementById('lessonInput').value.trim();
     const outputContainer = document.getElementById('outputContainer');
 
-    if (inputText === "") {
-        alert("Please enter valid text for the curriculum.");
+    if (moduleInput === "" || lessonInput === "") {
+        alert("Please enter valid input for modules and lessons.");
         return;
     }
 
-    const modules = inputText.split('\n\n');
+    const modules = moduleInput.split('\n');
+    const lessons = lessonInput.split('\n');
+
+    if (modules.length !== lessons.length) {
+        alert("Number of modules and lessons should match.");
+        return;
+    }
 
     let htmlOutput = '<div class="curriculum-container">\n';
 
-    modules.forEach((module, index) => {
-        const lines = module.split('\n');
-        const moduleName = lines[0].trim();
-        const items = lines.slice(1).map(item => `<li>${item.trim()}</li>`).join('\n');
+    modules.forEach((moduleName, index) => {
+        const lessonName = lessons[index];
+        const items = lessonName.split(',').map(item => `<li>${item.trim()}</li>`).join('\n');
 
         htmlOutput += `    <div class="curriculum-item">\n`;
         htmlOutput += `        <div class="module-header">\n`;
