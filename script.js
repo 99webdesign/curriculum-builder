@@ -1,5 +1,5 @@
 function convertToHTML() {
-    const editorContent = document.getElementById('editor').innerHTML;
+    const editorContent = tinymce.get('tinyMCEEditor').getContent();
     const outputContainer = document.getElementById('outputContainer');
     
     if (!editorContent.trim()) {
