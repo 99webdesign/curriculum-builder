@@ -1,22 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
-    <title>TinyMCE to HTML Converter</title>
+  <script src="https://cdn.tiny.cloud/1/ihf0agk2ppomgrcoh20ulb9xpiqug3m0p36qrh5syst2pnk9/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 </head>
 <body>
-    <div id="app">
-        <h1>TinyMCE to HTML Converter</h1>
-        <textarea id="tinyMCEEditor">Welcome to TinyMCE!</textarea>
-        <button onclick="convertToHTML()">Convert to HTML</button>
-        <div id="outputContainer"></div>
-        
-        <p>Free tool by 99webdesign. Check it out <a href="https://99webdesign.net" target="_blank">here</a>.</p>
-    </div>
+  <textarea id="editor"></textarea>
+  <button onclick="convertToHTML()">Convert to HTML</button>
+  <div id="result"></div>
 
-    <script src="https://cdn.tiny.cloud/1/YOUR_ENV_API_KEY/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+  <script>
+    tinymce.init({
+      selector: '#editor',
+      height: 200,
+      plugins: 'advlist autolink lists link charmap print preview',
+      toolbar: 'undo redo | formatselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link',
+      menubar: false
+    });
+
+    function convertToHTML() {
+      var htmlContent = tinymce.get("editor").getContent();
+      var resultElement = document.getElementById("result");
+      resultElement.innerHTML = htmlContent;
+    }
+  </script>
 </body>
 </html>
