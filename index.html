@@ -5,21 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
-    <title>Curriculum Generator</title>
+    <title>Rich Text to HTML Converter</title>
 </head>
 <body>
     <div id="app">
-        <div id="inputContainer">
-            <div class="module-container">
-                <h3>Modules:</h3>
-                <textarea id="moduleInput" placeholder="Enter module names here..."></textarea>
-            </div>
-            <div class="lesson-container">
-                <h3>Lessons:</h3>
-                <textarea id="lessonInput" placeholder="Enter lesson names here..."></textarea>
-            </div>
-        </div>
-        <button onclick="generateCurriculum()">Convert to HTML Code</button>
+        <h1>Rich Text to HTML Converter</h1>
+        <div id="editor" contenteditable="true" placeholder="Start typing..."></div>
+        <button onclick="convertToHTML()">Convert to HTML</button>
         <div id="outputContainer"></div>
         
         <p>Free tool by 99webdesign. Check it out <a href="https://99webdesign.net" target="_blank">here</a>.</p>
